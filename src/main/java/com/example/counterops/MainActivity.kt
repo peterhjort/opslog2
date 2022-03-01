@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
             false
         }
 
-        viewModel.balance.observe(this, {
+        viewModel.balance.observe(this) {
             binding.balanceView.text = it.toString()
-        })
+        }
     }
 }
 

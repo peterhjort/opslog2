@@ -17,7 +17,7 @@ interface OpsLogDAO {
     @Insert
     suspend fun insert(entry: OpsLogEntry)
     @Query("select * from OpsLogEntry")
-    fun getAll(): LiveData<List<OpsLogEntry>>
+    fun getAll(): LiveData<List<OpsLogEntry>> // creating LiveData is non-blocking
     @Query("select * from OpsLogEntry where timestamp > :timestamp")
-    fun getAllSince(timestamp: Long): LiveData<List<OpsLogEntry>>
+    fun getAllSince(timestamp: Long): LiveData<List<OpsLogEntry>> // creating LiveData is non-blocking
 }
